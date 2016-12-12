@@ -1,0 +1,16 @@
+<h1 class="page-header">Top250</h1>
+<div class="list-group">
+	<a href="#" class="list-group-item" ng-repeat="item in subjects">
+		<span class="badge">{{item.rating.average}}</span>
+		<div class="media">
+			<div class="media-left" href="#">
+        <img ng-src="{{item.images.small}}" alt="">
+			</div>
+			<div class="media-body">
+				<h3 class="media-heading">{{item.title}}</h3>
+				<p>导演:<span ng-repeat="c in item.casts">{{c.name}}<span ng-if="!$last">、</span></span></p>
+				<p>类型:{{item.genres.join("、")}}</p>
+			</div>
+		</div>
+	</a>
+</div>
