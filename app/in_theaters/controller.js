@@ -1,7 +1,7 @@
 (function(angular) {
-		'use strict';
+	'use strict';
 
-	var module = angular.module('moviecat.in_theaters', ['ngRoute','moviecat.services.http']);
+	var module = angular.module('moviecat.in_theaters', ['ngRoute', 'moviecat.services.http']);
 
 	module.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/in_theaters', {
@@ -14,15 +14,16 @@
 		'$scope',
 		'$routeParams',
 		'HttpService',
-		function($scope,$routeParams,HttpService) {
+		function($scope, $routeParams, HttpService) {
 			$scope.subjects = [];
 			$scope.message = '';
-			var count = 2;
 			HttpService.jsonp(
-				'http://api.douban.com/v2/movie/in_theaters', {},function(data) {
+				'http://api.douban.com/v2/movie/in_theaters', {},
+				function(data) {
 					// $apply的作用就是让指定的表达式重新同步
 					$scope.subjects = data.subjects;
-					$scope.$apply();
-			});
-	}]);
+					$scope.$apply('subjects');
+				});
+		}
+	]);
 })(angular)
