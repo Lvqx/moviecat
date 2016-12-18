@@ -5,11 +5,12 @@ angular.module('moviecat', [
   'ngRoute',
   'moviecat.movie_list',
   'moviecat.directive.auto-focus'
-]);
+]).config(['$routeProvider', function($routeProvider) {
+  $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
+}]);
 
-// config(['$routeProvider', function($routeProvider) {
-//   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
-// }]).controller('NavController',['$scope','$location',function($scope,$location) {
+
+//.controller('NavController',['$scope','$location',function($scope,$location) {
 //   $scope.$location = $location;
 //   $scope.$watch('$location.path()',function(now) {
 //     if (now.startsWith('/in_theaters')) {

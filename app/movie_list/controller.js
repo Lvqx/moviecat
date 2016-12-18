@@ -17,7 +17,7 @@
 		'HttpService',
 		function($scope,$route,$routeParams,HttpService) {
 			//分页
-			var count = 5;
+			var count = 3;
 			var page = parseInt($routeParams.page);
 			var start = (page - 1) * count;
 			$scope.totalpages = 0;
