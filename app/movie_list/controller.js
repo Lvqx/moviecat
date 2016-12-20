@@ -29,7 +29,8 @@
 			HttpService.jsonp(
 				'http://api.douban.com/v2/movie/' + $routeParams.category, {
 					start: start,
-					count: count
+					count: count,
+					q:$routeParams.q
 				},
 				function(data) {
 					// $apply的作用就是让指定的表达式重新同步

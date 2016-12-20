@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My AngularJS App</title>
+	<title>Moviecat</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="app.css">
 </head>
@@ -29,8 +29,8 @@
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">Help</a></li>
 				</ul>
-				<form class="navbar-form navbar-right">
-					<input type="text" class="form-control" placeholder="Search...">
+				<form class="navbar-form navbar-right" ng-submit='search()' ng-controller='SearchController'>
+					<input type="text" class="form-control" placeholder="Search..." ng-model="input">
 				</form>
 			</div>
 		</div>
@@ -55,10 +55,11 @@
 
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="app.js"></script>
 	<script src="components/http.js"></script>
 	<script src="components/auto-focus.js"></script>
-	<script src="app.js"></script>
 	<script src="movie_list/controller.js"></script>
+	<script src="movie_detail/controller.js"></script>
 </body>
 
 </html>
